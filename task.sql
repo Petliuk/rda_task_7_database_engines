@@ -2,30 +2,30 @@ CREATE DATABASE ShopDB;
 USE ShopDB;
 
 CREATE TABLE Countries (
-    ID INT,
-    Name VARCHAR(50),
+    ID INT NOT NULL,
+    Name VARCHAR(50) NOT NULL,
     PRIMARY KEY (ID)
 ) ENGINE=InnoDB;
 
 CREATE TABLE GeoIPCache (
-    ID INT,
-    IPRange VARCHAR(50),
-    CountryID INT,
+    ID INT NOT NULL,
+    IPRange VARCHAR(50) NOT NULL,
+    CountryID INT NOT NULL,
     PRIMARY KEY (ID)
 ) ENGINE=MEMORY;
 
 CREATE TABLE ProductDescription (
-    ID INT,
-    Description TEXT,
-    ProductID INT,
-    CountryID INT,
+    ID INT NOT NULL,
+    Description TEXT NOT NULL,
+    ProductID INT NOT NULL,
+    CountryID INT NOT NULL,
     PRIMARY KEY (ID)
-) ENGINE=MyISAM;
+) ENGINE=InnoDB;
 
 CREATE TABLE Logs (
-    ID INT,
-    Timestamp DATETIME,
-    Message TEXT,
+    ID INT NOT NULL,
+    Timestamp DATETIME NOT NULL,
+    Message TEXT NOT NULL,
     PRIMARY KEY (ID)
 ) ENGINE=BLACKHOLE;
 
